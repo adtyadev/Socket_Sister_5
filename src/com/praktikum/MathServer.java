@@ -13,7 +13,6 @@ public class MathServer {
 		Socket soket = null;
 		Data x = null;
 		MathObject y = null;
-		float hasil[] = null;
 		try {
 			System.out.print("Server is Running...........");
 			server = new ServerSocket(4343);
@@ -22,10 +21,7 @@ public class MathServer {
 			ObjectInputStream ois = new ObjectInputStream(is);
 			OutputStream os = soket.getOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(os);
-/*			x = (Data) ois.readObject();
-			y = new MathObject();
-			y.jumlah(x);
-*/			
+	
 			x = (Data) ois.readObject();
 			y = new MathObject();
 			y.jumlah(x);
